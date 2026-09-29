@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Equilibra — Leitura inteligente de produtos</title>
+<meta name="description" content="Equilibra: escaneie rótulos, entenda validade, nutrientes e alergênicos em linguagem simples." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+<div class="phone">
+  <header class="topbar">
+    <div class="brand">
+      <span class="leaf">🌿</span>
+      <div>
+        <strong>Equilibra</strong>
+        <small>Leitura inteligente de produtos</small>
+      </div>
+    </div>
+    <button class="avatar" type="button" title="Perfil">AC</button>
+  </header>
+
+  <main class="content">
+
+    <section class="screen is-active" id="tela-inicio">
+      <div class="hero">
+        <p class="hero-hi">Olá, Ana Clara 👋</p>
+        <h1 class="hero-title">O que você vai<br />consumir hoje?</h1>
+        <p class="hero-sub">Aponte a câmera para o código de barras e receba a leitura do rótulo em linguagem simples.</p>
+        <button class="btn btn-hero" type="button" data-goto="escanear">Escanear produto</button>
+        <div class="hero-glow"></div>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat">
+          <span class="stat-num">4</span>
+          <span class="stat-lbl">Escaneados</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num warn">2</span>
+          <span class="stat-lbl">Vencendo</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num good">R$ 38</span>
+          <span class="stat-lbl">Economizados</span>
+        </div>
+      </div>
+
+      <h2 class="section-title">Vence em breve</h2>
+      <div class="card alert-card">
+        <span class="emoji-badge">🥣</span>
+        <div class="grow">
+          <strong>Iogurte Natural Integral</strong>
+          <small>Vence amanhã · 1 pote</small>
+        </div>
+        <span class="pill pill-evitar">1 dia</span>
+      </div>
+
+      <h2 class="section-title">Escaneados recentemente</h2>
+      <div class="list" id="lista-recentes"></div>
+    </section>
+
+    <section class="screen" id="tela-escanear">
+      <h1 class="page-title">Escanear</h1>
+      <p class="page-sub">Centralize o código de barras dentro da moldura.</p>
+
+      <div class="scanner" id="scanner">
+        <div class="scan-frame">
+          <span class="corner tl"></span><span class="corner tr"></span>
+          <span class="corner bl"></span><span class="corner br"></span>
+          <div class="scan-laser"></div>
+          <div class="barcode">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+        </div>
+        <p class="scan-status" id="scan-status">Câmera pronta</p>
+      </div>
+
+      <button class="btn btn-primary block" type="button" id="btn-scan">Simular leitura</button>
+
+      <h2 class="section-title">Ou escolha um produto de teste</h2>
+      <div class="list" id="lista-produtos"></div>
+    </section>
+
+    <section class="screen" id="tela-produto">
+      <button class="back" type="button" data-goto="escanear">← Voltar</button>
+      <div id="produto-detalhe"></div>
+    </section>
+
+    <section class="screen" id="tela-validade">
+      <h1 class="page-title">Validade</h1>
+      <p class="page-sub">Sua despensa organizada pelo que vence primeiro.</p>
+      <div class="list" id="lista-despensa"></div>
+      <div class="note">🔔 Enviamos um lembrete 2 dias antes de cada vencimento.</div>
+    </section>
+
+    <section class="screen" id="tela-lista">
+      <h1 class="page-title">Lista de compras</h1>
+      <p class="page-sub">Compartilhada com a sua casa.</p>
+
+      <form class="add-row" id="form-item" autocomplete="off">
+        <input type="text" id="input-item" placeholder="Adicionar item…" />
+        <button class="btn btn-primary" type="submit">+</button>
+      </form>
+
+      <div class="progress-wrap">
+        <div class="progress"><span id="barra-lista"></span></div>
+        <small id="texto-lista">0 de 0 comprados</small>
+      </div>
+
+      <div class="list" id="lista-compras"></div>
+    </section>
+
+    <section class="screen" id="tela-historico">
+      <h1 class="page-title">Histórico</h1>
+      <p class="page-sub">Tudo o que você já escaneou.</p>
+      <div class="list" id="lista-historico"></div>
+    </section>
+
+  </main>
+
+  <nav class="tabbar">
+    <button class="tab is-active" type="button" data-goto="inicio"><span>🏠</span>Início</button>
+    <button class="tab" type="button" data-goto="escanear"><span>📷</span>Escanear</button>
+    <button class="tab" type="button" data-goto="validade"><span>📅</span>Validade</button>
+    <button class="tab" type="button" data-goto="lista"><span>🛒</span>Lista</button>
+    <button class="tab" type="button" data-goto="historico"><span>🕘</span>Histórico</button>
+  </nav>
+</div>
+
+<script src="./app.js"></script>
+</body>
+</html>

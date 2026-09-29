@@ -1,0 +1,22 @@
+{
+  "expo": {
+    "name": "Equilibra",
+    "slug": "equilibra",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#0f1a14"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "app.equilibra"
+    },
+    "plugins": [
+      "expo-asset"
+    ]
+  }
+}
